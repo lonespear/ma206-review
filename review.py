@@ -301,47 +301,30 @@ with tab_draft:
 with tab_info:
     st.header("📊 Baseball Stats Explained")
 
+    st.markdown("### 🧮 How Stats Are Calculated")
+
+    st.markdown("**On-Base Percentage (OBP)**  \nMeasures how frequently a player reaches base.")
+    st.latex(r"\text{OBP} = \frac{\text{Hits} + \text{Walks} + \text{Hit By Pitch}}{\text{At Bats} + \text{Walks} + \text{Hit By Pitch} + \text{Sacrifice Flies}}")
+    st.markdown("- High OBP = more likely to reach base.  \n- OBP of .400+ is elite.")
+
+    st.markdown("**Slugging Percentage (SLG)**  \nMeasures the power of a hitter — how many bases they earn per at-bat.")
+    st.latex(r"\text{SLG} = \frac{(1B) + 2 \times (2B) + 3 \times (3B) + 4 \times (HR)}{\text{At Bats}}")
+    st.markdown("- High SLG = more extra-base hits.  \n- SLG of .500+ is powerful.")
+
+    st.markdown("**Earned Run Average (ERA)**  \nMeasures average number of earned runs allowed per 9 innings.")
+    st.latex(r"\text{ERA} = \frac{\text{Earned Runs} \times 9}{\text{Innings Pitched}}")
+    st.markdown("- Low ERA = better pitcher.  \n- ERA under 3.00 is dominant.")
+
+    st.markdown("---")
+    st.markdown("### 🎲 How This Affects the Dice Game")
+
     st.markdown("""
-    ### 🧮 How Stats Are Calculated
+    - **OBP** increases your hitter’s chance to **get on base** on a dice roll.
+    - **SLG** boosts your odds for **extra-base hits** like doubles or home runs.
+    - **ERA** lowers your opponent’s chances if you're fielding a pitcher.
 
-    **On-Base Percentage (OBP)**  
-    Measures how frequently a player reaches base.  
-    \[
-    \\text{OBP} = \\frac{\\text{Hits} + \\text{Walks} + \\text{Hit By Pitch}}{\\text{At Bats} + \\text{Walks} + \\text{Hit By Pitch} + \\text{Sacrifice Flies}}
-    \]
-
-    - High OBP = more likely to reach base.
-    - OBP of .400+ is elite.
-
-    **Slugging Percentage (SLG)**  
-    Measures the power of a hitter — how many bases they earn per at-bat.  
-    \[
-    \\text{SLG} = \\frac{(\\text{1B}) + 2 \\times (\\text{2B}) + 3 \\times (\\text{3B}) + 4 \\times (\\text{HR})}{\\text{At Bats}}
-    \]
-
-    - High SLG = more extra-base hits (doubles, triples, homers).
-    - SLG of .500+ is powerful.
-
-    **Earned Run Average (ERA)**  
-    Measures the average number of earned runs a pitcher allows per 9 innings.  
-    \[
-    \\text{ERA} = \\frac{\\text{Earned Runs Allowed} \\times 9}{\\text{Innings Pitched}}
-    \]
-
-    - Lower ERA = better pitcher.
-    - ERA below 3.00 is dominant.
-
-    ---
-    ### 🎲 How This Affects the Dice Game
-
-    In the next lesson, you’ll compete in a dice-based baseball simulation:
-
-    - **Hitters with high OBP** will have a **better chance to reach base** on a die roll.
-    - **Hitters with high SLG** will have **more opportunities to hit doubles, triples, and home runs**.
-    - **Pitchers with low ERA** will make it **harder for opposing hitters to succeed**.
-
-    Your **salary cap** from the quiz determines how strong your drafted team can be.  
-    **Draft wisely**, because these stats directly shape your odds in tomorrow’s matchups!
+    Your quiz-based **salary cap** determines how good your team can be.  
+    Pick wisely. Draft strategically. This will help you in next lesson's tournament!
 
     ⚾💼 Build your team. 🧠 Strategize. 🎲 Let the game begin.
     """)
