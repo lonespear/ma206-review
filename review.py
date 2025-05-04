@@ -262,6 +262,8 @@ with tab_draft:
             )
             bids.append(bid)
 
+            st.markdown("---")
+
         df["Your Bid"] = bids
         st.markdown("---")
         st.write(f"**Total Bid:** ${sum(bids):,} of ${cap:,}")
