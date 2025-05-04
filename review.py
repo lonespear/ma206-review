@@ -211,7 +211,7 @@ def run_quiz_form(team_name, members, section, salary_per_question=400_000):
 
     return None
 
-tab_quiz, tab_draft = st.tabs(["🧮 Quiz", "💰 Draft"])
+tab_quiz, tab_draft, tab_info = st.tabs(["🧮 Quiz", "💰 Draft", "📊 Helpful Info"])
 
 with tab_quiz:
     # 1) Top-level inputs (live)
@@ -297,3 +297,51 @@ with tab_draft:
                     st.success("✅ Bids submitted to Google Sheets!")
     else:
         st.info("Finish the quiz first to unlock your Salary Cap.")
+
+with tab_info:
+    st.header("📊 Baseball Stats Explained")
+
+    st.markdown("""
+    ### 🧮 How Stats Are Calculated
+
+    **On-Base Percentage (OBP)**  
+    Measures how frequently a player reaches base.  
+    \[
+    \\text{OBP} = \\frac{\\text{Hits} + \\text{Walks} + \\text{Hit By Pitch}}{\\text{At Bats} + \\text{Walks} + \\text{Hit By Pitch} + \\text{Sacrifice Flies}}
+    \]
+
+    - High OBP = more likely to reach base.
+    - OBP of .400+ is elite.
+
+    **Slugging Percentage (SLG)**  
+    Measures the power of a hitter — how many bases they earn per at-bat.  
+    \[
+    \\text{SLG} = \\frac{(\\text{1B}) + 2 \\times (\\text{2B}) + 3 \\times (\\text{3B}) + 4 \\times (\\text{HR})}{\\text{At Bats}}
+    \]
+
+    - High SLG = more extra-base hits (doubles, triples, homers).
+    - SLG of .500+ is powerful.
+
+    **Earned Run Average (ERA)**  
+    Measures the average number of earned runs a pitcher allows per 9 innings.  
+    \[
+    \\text{ERA} = \\frac{\\text{Earned Runs Allowed} \\times 9}{\\text{Innings Pitched}}
+    \]
+
+    - Lower ERA = better pitcher.
+    - ERA below 3.00 is dominant.
+
+    ---
+    ### 🎲 How This Affects the Dice Game
+
+    In the next lesson, you’ll compete in a dice-based baseball simulation:
+
+    - **Hitters with high OBP** will have a **better chance to reach base** on a die roll.
+    - **Hitters with high SLG** will have **more opportunities to hit doubles, triples, and home runs**.
+    - **Pitchers with low ERA** will make it **harder for opposing hitters to succeed**.
+
+    Your **salary cap** from the quiz determines how strong your drafted team can be.  
+    **Draft wisely**, because these stats directly shape your odds in tomorrow’s matchups!
+
+    ⚾💼 Build your team. 🧠 Strategize. 🎲 Let the game begin.
+    """)
