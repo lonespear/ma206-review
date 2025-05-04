@@ -129,20 +129,24 @@ def run_quiz_form(team_name, members, section, salary_per_question=400_000):
                 "explanation": "E[X] = (1+2+3+4+5+6)/6 = 3.5."}
         }
 
-        for q_data in questions.values():
-            opts = q_data["options"][:]    # copy the list
-            random.shuffle(opts)
-            q_data["options"] = opts
-
-        # 2) (Optional) Shuffle the order in which you present the questions
-        question_order = list(questions.keys())
-        random.shuffle(question_order)
+        if "shuffled_questions" not in st.session_state:
+            question_order = list(questions.keys())
+            random.shuffle(question_order)
+            st.session_state["shuffled_questions"] = question_order
+        
+        if "shuffled_options" not in st.session_state:
+            st.session_state["shuffled_options"] = {}
+            for q_num, q_data in questions.items():
+                opts = q_data["options"][:]
+                random.shuffle(opts)
+                st.session_state["shuffled_options"][q_num] = opts
 
         st.subheader("Answer the following questions:")
-        for q_num, q_data in questions.items():
+        for q_num in st.session_state["shuffled_questions"]:
+            q_data = questions[q_num]
             sel = st.radio(
                 f"Q{q_num}: {q_data['question']}",
-                q_data["options"],
+                st.session_state["shuffled_options"][q_num],
                 key=f"q{q_num}"
             )
             responses[q_num] = sel
@@ -158,7 +162,7 @@ def run_quiz_form(team_name, members, section, salary_per_question=400_000):
 
     # scoring
     if submitted:
-        score = sum(responses[q] == questions[q]["answer"] for q in questions)
+        score = sum(responses[q] == questions[q]["answer"] for q in st.session_state["shuffled_questions"])
         cap = score * salary_per_question
 
         # After calculating score and cap
@@ -192,19 +196,18 @@ def run_quiz_form(team_name, members, section, salary_per_question=400_000):
 tab_quiz, tab_draft = st.tabs(["⚾ Quiz", "⚾ Draft"])
 
 with tab_quiz:
-    # Clear submitted_bids if team name or section has changed
-    if (
-        "team_name" in st.session_state and
-        team_name != st.session_state["team_name"]
-    ) or (
-        "section" in st.session_state and
-        section != st.session_state["section"]
-    ):
-        st.session_state["submitted_bids"] = False
     # 1) Top-level inputs (live)
     section   = st.selectbox("Select Your Section:", ["G1","I1","G2","I2"])
     team_name = st.text_input("Enter Your Team Name:")
     members   = st.text_input("Enter Team Members' Last Names:")
+
+    # Clear submitted_bids if team name or section has changed
+    if (
+        ("team_name" in st.session_state and team_name != st.session_state["team_name"]) or
+        ("section" in st.session_state and section != st.session_state["section"])
+    ):
+        st.session_state["submitted_bids"] = False
+
     cap = run_quiz_form(team_name, members, section)   # returns cap or None
 
 with tab_draft:
@@ -268,8 +271,9 @@ with tab_draft:
                 # Add quiz correctness columns Q1–Q25
                 data_dict.update(st.session_state.get("quiz_results", {}))
 
-                send_to_gsheet(data_dict)
-                st.session_state["submitted_bids"] = True
-                st.success("✅ Bids submitted to Google Sheets!")
+                if st.button("Submit Bids to Google Sheet"):
+                    send_to_gsheet(data_dict)
+                    st.session_state["submitted_bids"] = True
+                    st.success("✅ Bids submitted to Google Sheets!")
     else:
         st.info("Finish the quiz first to unlock your Salary Cap.")
