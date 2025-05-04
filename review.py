@@ -266,7 +266,7 @@ with tab_draft:
 
         df["Your Bid"] = bids
         st.markdown("---")
-        st.write(f"**Total Bid:** ${sum(bids):,} of ${cap:,}")
+        st.write(f"**Total Bid:** {sum(bids):,} of {cap:,}")
         if sum(bids) > cap:
             st.error("You’ve exceeded your Salary Cap!")
         else:
