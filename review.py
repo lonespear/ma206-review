@@ -19,7 +19,7 @@ def send_to_gsheet(data_dict):
 st.set_page_config(page_title="Cadet Review Quiz", layout="centered")
 st.title("⚾ Cadet Review Game: Quiz for Salary Cap")
 
-def run_quiz_form(salary_per_question=400_000):
+def run_quiz_form(team_name, members, section, salary_per_question=400_000):
     responses = {}
 
     with st.form("salary_quiz_form"):
@@ -205,7 +205,7 @@ with tab_quiz:
     section   = st.selectbox("Select Your Section:", ["G1","I1","G2","I2"])
     team_name = st.text_input("Enter Your Team Name:")
     members   = st.text_input("Enter Team Members' Last Names:")
-    cap = run_quiz_form()   # returns cap or None
+    cap = run_quiz_form(team_name, members, section)   # returns cap or None
 
 with tab_draft:
     if "salary_cap" in st.session_state:
