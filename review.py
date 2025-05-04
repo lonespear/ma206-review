@@ -16,7 +16,7 @@ def send_to_gsheet(data_dict):
     sheet.append_row(list(data_dict.values()))
 
 # ---- CONFIG ----
-st.set_page_config(page_title="Cadet Review Quiz", layout="wide")
+st.set_page_config(page_title="MA206 Culminating Review", layout="wide")
 st.title("⚾ STATBALL ⚾")
 
 st.markdown("""
