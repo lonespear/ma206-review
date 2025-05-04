@@ -19,6 +19,22 @@ def send_to_gsheet(data_dict):
 st.set_page_config(page_title="Cadet Review Quiz", layout="centered")
 st.title("⚾ Cadet Review Game: Quiz for Salary Cap")
 
+st.markdown("""
+### 📝 Instructions
+
+1. **Quiz Tab**:  
+   - Select your section, enter your team name, and list all member last names.  
+   - Answer all 25 multiple-choice questions.  
+   - When finished, click **"Score My Answers"** to reveal your **Salary Cap** based on correct answers.
+
+2. **Draft Tab**:  
+   - Use your Salary Cap to bid on players by entering amounts in the **Your Bid** column.  
+   - Ensure the **Total Bid** stays within your cap limit.  
+   - Once finalized, click **"Submit Bids to Google Sheet"** to lock in your team.
+
+🛑 You **cannot edit** your submission after submitting, so double-check before finalizing!
+""")
+
 def run_quiz_form(team_name, members, section, salary_per_question=400_000):
     responses = {}
 
