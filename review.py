@@ -192,6 +192,15 @@ def run_quiz_form(salary_per_question=400_000):
 tab_quiz, tab_draft = st.tabs(["⚾ Quiz", "⚾ Draft"])
 
 with tab_quiz:
+    # Clear submitted_bids if team name or section has changed
+    if (
+        "team_name" in st.session_state and
+        team_name != st.session_state["team_name"]
+    ) or (
+        "section" in st.session_state and
+        section != st.session_state["section"]
+    ):
+        st.session_state["submitted_bids"] = False
     # 1) Top-level inputs (live)
     section   = st.selectbox("Select Your Section:", ["G1","I1","G2","I2"])
     team_name = st.text_input("Enter Your Team Name:")
