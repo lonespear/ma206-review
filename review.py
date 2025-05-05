@@ -286,7 +286,7 @@ with tab_draft:
                 min_value=0,
                 max_value=cap,
                 value=0,
-                step=1,
+                step=0.01,
                 key=f"bid_{i}"
             )
             bids.append(bid)
