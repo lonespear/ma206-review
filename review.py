@@ -283,9 +283,9 @@ with tab_draft:
 
             bid = cols[5].number_input(
                 label="",
-                min_value=0,
-                max_value=cap,
-                value=0,
+                min_value=0.0,
+                max_value=float(cap),
+                value=0.0,
                 step=0.01,
                 key=f"bid_{i}"
             )
