@@ -347,16 +347,15 @@ with tab_info:
     st.markdown("---")
     st.markdown("### 🎲 How These Stats Affect the Dice Game")
 
-    st.markdown("#### Step 1: 🎲 Roll to Make Contact")
-    st.markdown("""  
-    - Hitter rolls **2d6**.
-    - Pitcher's ERA determines a **modifier** to apply:
+    st.markdown("""#### Step 1: 🎲 Roll to Make Contact
 
-        - ERA ≤ 2.50 → subtract 2  
-        - ERA 2.51–3.00 → subtract 1  
-        - ERA 3.01–3.75 → no modifier  
-        - ERA > 3.75 → **add** 1
-     """)
+- Hitter rolls **2d6**.
+- Pitcher's ERA determines a **modifier** to apply:
+    - ERA ≤ 2.50 → subtract 2  
+    - ERA 2.51–3.00 → subtract 1  
+    - ERA 3.01–3.75 → no modifier  
+    - ERA > 3.75 → **add** 1
+""")
 
     st.markdown("#### Step 2: ✅ Check OBP Threshold")
     st.markdown("Match the **modified roll** against the hitter’s OBP:")
@@ -386,4 +385,4 @@ with tab_info:
     }))
 
     st.markdown("Your salary cap determines your roster quality based on quiz performance. Make smart draft picks!")
-    st.markdown(u"📊 Quiz hard → 💸 Draft well → ⚾ Play smart → 🏆 Win the game")
+    st.markdown("📊 Quiz hard → 💸 Draft well → ⚾ Play smart → 🏆 Win the game")
