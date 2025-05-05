@@ -348,19 +348,21 @@ with tab_info:
     st.markdown("### 🎲 How These Stats Affect the Dice Game")
 
     st.markdown("""
-    - You will play **5-inning games head-to-head** against other teams.
-    - Each team has **5 hitters** and **2 pitchers**. You alternate pitchers between games.
-
-        st.markdown("### 🧮 At-Bat Mechanics")
-
-    st.markdown("#### Step 1: 🎲 Roll to Reach Base")
-    st.markdown("""
+    **How Dice Rolling Works**
+    
     - Hitter rolls **2d6**.
     - Pitcher's ERA determines a **modifier** to apply:
-        - ERA ≤ 2.50: subtract 2  
-        - ERA 2.51–3.00: subtract 1  
-        - ERA 3.01–3.75: no modifier  
-        - ERA > 3.75: add 1
+    
+        - ERA ≤ 2.50 → subtract 2  
+        - ERA 2.51–3.00 → subtract 1  
+        - ERA 3.01–3.75 → no modifier  
+        - ERA > 3.75 → **add** 1
+    
+    - After modifier is applied, compare final result to thresholds:
+        - **2–6** → out  
+        - **7–9** → single  
+        - **10–11** → double or triple  
+        - **12+** → home run
     """)
 
     st.markdown("#### Step 2: ✅ Check OBP Threshold")
