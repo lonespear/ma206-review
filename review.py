@@ -393,6 +393,6 @@ with tab_info:
     }))
 
     Your salary cap determines your roster quality based on quiz performance. Make smart draft picks!
-
-    🧮 Quiz hard → 💸 Draft well → ⚾ Play smart → 🏆 Win the game
     """)
+
+    st.markdown(u"📊 Quiz hard → 💸 Draft well → ⚾ Play smart → 🏆 Win the game")
