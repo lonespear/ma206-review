@@ -235,7 +235,7 @@ def run_quiz_form(team_name, members, section, salary_per_question=1):
                 st.markdown(f"❌ Q{q_num}: Incorrect — **Correct: {q_data['answer']}**")
                 st.caption(q_data["explanation"])
 
-        st.markdown(f"### 🎯 Total Salary Cap: {cap} (millions)")
+        st.markdown(f"### 🎯 Total Salary Cap: \${cap} million")
         return cap
 
     return None
