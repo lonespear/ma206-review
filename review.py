@@ -349,9 +349,10 @@ with tab_info:
 
     st.markdown("""
     st.markdown("#### Step 1: 🎲 Roll to Make Contact")
-    st.markdown("The **hitter** rolls **2d6**)
-    st.markdown(The **pitcher's ERA** modifies this roll:)
-    st.markdown("""
+    st.markdown("""  
+    - Hitter rolls **2d6**.
+    - Pitcher's ERA determines a **modifier** to apply:
+
         - ERA ≤ 2.50 → subtract 2  
         - ERA 2.51–3.00 → subtract 1  
         - ERA 3.01–3.75 → no modifier  
