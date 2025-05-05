@@ -347,7 +347,6 @@ with tab_info:
     st.markdown("---")
     st.markdown("### 🎲 How These Stats Affect the Dice Game")
 
-    st.markdown("""
     st.markdown("#### Step 1: 🎲 Roll to Make Contact")
     st.markdown("""  
     - Hitter rolls **2d6**.
