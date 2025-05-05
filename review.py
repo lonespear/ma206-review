@@ -35,7 +35,7 @@ st.markdown("""
 🛑 You **cannot edit** your submission after submitting, so double-check before finalizing!
 """)
 
-def run_quiz_form(team_name, members, section, salary_per_question=400_000):
+def run_quiz_form(team_name, members, section, salary_per_question=1):
     responses = {}
 
     with st.form("salary_quiz_form"):
@@ -235,7 +235,7 @@ def run_quiz_form(team_name, members, section, salary_per_question=400_000):
                 st.markdown(f"❌ Q{q_num}: Incorrect — **Correct: {q_data['answer']}**")
                 st.caption(q_data["explanation"])
 
-        st.markdown(f"### 🎯 Total Salary Cap: ${cap:,}")
+        st.markdown(f"### 🎯 Total Salary Cap: {cap} (millions)")
         return cap
 
     return None
@@ -266,7 +266,7 @@ with tab_draft:
 
         df = pd.read_csv("player_stats.csv")
 
-        st.subheader(f"Your Salary Cap: ${cap:,}")
+        st.subheader(f"Your Salary Cap: ${cap:,} million")
         header_cols = st.columns([4,1,1,1,1,2])
         headers = ["Player", "Pos", "OBP", "SLG", "ERA", "Your Bid"]
         for col, h in zip(header_cols, headers):
@@ -295,7 +295,7 @@ with tab_draft:
 
         df["Your Bid"] = bids
         st.markdown("---")
-        st.write(f"**Total Bid:** {sum(bids):,} of {cap:,}")
+        st.write(f"**Total Bid:** \${sum(bids):,} of \${cap:,} million")
         if sum(bids) > cap:
             st.error("You’ve exceeded your Salary Cap!")
         else:
