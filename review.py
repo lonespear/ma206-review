@@ -350,17 +350,45 @@ with tab_info:
     st.markdown("""
     - You will play **5-inning games head-to-head** against other teams.
     - Each team has **5 hitters** and **2 pitchers**. You alternate pitchers between games.
-    - Hitters roll **2d6** for each at-bat. Pitchers apply a **modifier** based on ERA:
-        - ERA < 2.5 → subtract **2**
-        - ERA 2.5–3.5 → subtract **1**
-        - ERA 3.5–4.5 → no modifier
-        - ERA > 4.5 → **add 1**
-    - The final result determines the at-bat outcome based on your hitter’s OBP and SLG:
-        - 2–4: Out  
-        - 5–6: Walk *(OBP players only)*  
-        - 7–8: Single  
-        - 9–10: Double or Triple *(depends on SLG)*  
-        - 11–12: Home Run *(SLG players only)*
+
+        st.markdown("### 🧮 At-Bat Mechanics")
+
+    st.markdown("#### Step 1: 🎲 Roll to Reach Base")
+    st.markdown("""
+    - Hitter rolls **2d6**.
+    - Pitcher's ERA determines a **modifier** to apply:
+        - ERA ≤ 2.50 → subtract 2  
+        - ERA 2.51–3.00 → subtract 1  
+        - ERA 3.01–3.75 → no modifier  
+        - ERA > 3.75 → **add** 1  
+    """)
+
+    st.markdown("#### Step 2: ✅ Check OBP Threshold")
+    st.markdown("Match the **modified roll** against the hitter’s OBP:")
+
+    st.table(pd.DataFrame({
+        "OBP Range": ["≥ 0.400", "0.375–0.399", "0.350–0.374", "0.325–0.349", "< 0.325"],
+        "Minimum Roll (after modifier)": ["5+", "6+", "7+", "8+", "9+"]
+    }))
+
+    st.markdown("- If the modified roll **meets or beats** the threshold → it's a **hit**.")
+    st.markdown("- Otherwise → it's an **out**.")
+
+    st.markdown("#### Step 3: 🔁 Roll to Determine Hit Type")
+    st.markdown("Roll another **2d6** to determine the kind of hit. Use hitter's SLG:")
+
+    st.table(pd.DataFrame({
+        "SLG Range": [
+            "≥ 0.550", "0.500–0.549", "0.450–0.499", "0.400–0.449", "< 0.400"
+        ],
+        "2d6 Outcomes": [
+            "2–4: 1B, 5–7: 2B, 8–10: 3B, 11–12: HR",
+            "2–5: 1B, 6–8: 2B, 9–11: 3B, 12: HR",
+            "2–6: 1B, 7–9: 2B, 10–12: 3B",
+            "2–7: 1B, 8–10: 2B, 11–12: 3B",
+            "2–8: 1B, 9–12: 2B"
+        ]
+    }))
 
     Your salary cap determines your roster quality based on quiz performance. Make smart draft picks!
 
