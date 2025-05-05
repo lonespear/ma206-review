@@ -348,22 +348,15 @@ with tab_info:
     st.markdown("### 🎲 How These Stats Affect the Dice Game")
 
     st.markdown("""
-    **How Dice Rolling Works**
-    
-    - Hitter rolls **2d6**.
-    - Pitcher's ERA determines a **modifier** to apply:
-    
+    st.markdown("#### Step 1: 🎲 Roll to Make Contact")
+    st.markdown("""
+     - The **hitter** rolls **2d6**.
+     - The **pitcher's ERA** modifies this roll:
         - ERA ≤ 2.50 → subtract 2  
         - ERA 2.51–3.00 → subtract 1  
         - ERA 3.01–3.75 → no modifier  
         - ERA > 3.75 → **add** 1
-    
-    - After modifier is applied, compare final result to thresholds:
-        - **2–6** → out  
-        - **7–9** → single  
-        - **10–11** → double or triple  
-        - **12+** → home run
-    """)
+     """)
 
     st.markdown("#### Step 2: ✅ Check OBP Threshold")
     st.markdown("Match the **modified roll** against the hitter’s OBP:")
