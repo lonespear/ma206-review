@@ -123,7 +123,7 @@ streamlit run app/main.py
 
 ## 👨‍🏫 Use Cases
 
-- Cadet stats review before the Term End Exam  
+- Student stats review before the Term End Exam  
 - Engaged, team-based learning for intro statistics  
 - Adaptable to high school AP Stats or college intro courses  
 
