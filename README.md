@@ -7,6 +7,8 @@
 
 **StatBall** is a classroom-tested dice baseball game designed to help students review probability and statistics through gameplay. By completing review questions teams earn a salary cap, draft hitters and pitchers with real statistical traits, and compete in a dice-driven baseball tournament.
 
+https://statball.streamlit.app/
+
 ---
 
 ## 📚 Topics Covered
