@@ -53,7 +53,7 @@ Teams are seeded into a **double elimination bracket**. One pitcher is selected 
 
 ## 🎲 Example Play Sheet
 
-![StatBall Diamond Log](assets/diamond_log.png)
+![StatBall Diamond Log](assets/example_log.png)
 
 
 ### ⚙️ Adjustments
@@ -86,16 +86,13 @@ Track:
 
 ```
 statball/
-├── app/
-│   ├── main.py          # Streamlit app entry
-│   ├── quiz.py          # Quiz logic
-│   ├── draft.py         # Bidding interface
-│   ├── game.py          # Dice simulator
-│   └── utils.py         # Helper functions
-├── data/
-│   ├── player_stats.csv # OBP, SLG, ERA player data
+├── review.py          # Streamlit app walking students through Review Quiz, Player Bidding, and Explanation of Stats relating to Gameplay
+├── player_stats.csv   # File holding player stats
+├── requirements.txt   # Python dependecies
+├── statball_log.pdf   # Game Sheets (Sorry no downloadable Dice, although https://rolladie.net/ has a great interface!
 ├── assets/
 │   └── statball_logo.png
+|   └── example_log.png
 └── README.md            # This file
 ```
 
