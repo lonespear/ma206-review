@@ -5,7 +5,7 @@
   <img src="assets/statball_logo.png" alt="StatBall Logo" width="300"/>
 </p>
 
-**StatBall** is a classroom-tested dice baseball game built by the West Point Department of Mathematical Sciences. It’s designed to help cadets review probability and statistics through gameplay. Cadets answer review questions to earn a salary cap, draft hitters and pitchers with real statistical traits, and compete in a dice-driven baseball tournament.
+**StatBall** is a classroom-tested dice baseball game designed to help students review probability and statistics through gameplay. By completing review questions teams earn a salary cap, draft hitters and pitchers with real statistical traits, and compete in a dice-driven baseball tournament.
 
 ---
 
@@ -27,7 +27,7 @@ StatBall reinforces core intro stats concepts:
 
 ### ⚾ 1. Quiz Phase — Earn Your Salary Cap
 
-Cadets take a multiple-choice quiz (25 questions). Each correct answer earns **$400,000** in salary cap.
+Students take a multiple-choice quiz (25 questions). Each correct answer earns **$400,000** in salary cap.
 
 > Example: 18/25 correct → $7.2M salary cap
 
@@ -35,13 +35,13 @@ Cadets take a multiple-choice quiz (25 questions). Each correct answer earns **$
 
 ### 💸 2. Draft Phase — Build Your Team
 
-Cadets silently bid on:
+Students silently bid on:
 - **5 Hitters** (each with OBP and SLG stats)
 - **2 Pitchers** (with ERA stats)
 
 Players are unique and vary in quality. OBP and SLG affect how likely a batter gets on base or hits for power. ERA modifies how effective a pitcher is defensively.
 
-> Draft is done using silent auction: cadets submit bids within their cap.
+> Draft is done using silent auction: Students submit bids within their cap.
 
 ---
 
