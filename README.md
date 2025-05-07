@@ -52,8 +52,12 @@ Players are unique and vary in quality. OBP and SLG affect how likely a batter g
 Teams are seeded into a **double elimination bracket**. One pitcher is selected per game. The batting team rolls 2d6 dice to simulate plate appearances, influenced by player stats.
 
 ---
+## 💡Gameplay Walkthrough
 
-## 🎲 Example Play Sheet
+![Example Half-Inning](assets/example_inning.png)
+
+
+## 🎲 Example Student-Completed Log Sheet
 
 ![StatBall Diamond Log](assets/example_log.png)
 
