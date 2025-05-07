@@ -51,16 +51,10 @@ Teams are seeded into a **double elimination bracket**. One pitcher is selected 
 
 ---
 
-## 🎲 Dice Roll Outcomes
+## 🎲 Example Play Sheet
 
-| Dice Roll | Result     |
-|-----------|------------|
-| 2–5       | Out        |
-| 6–7       | Walk       |
-| 8–9       | Single     |
-| 10        | Double     |
-| 11        | Triple     |
-| 12        | Home Run   |
+![StatBall Diamond Log](assets/diamond_log.png)
+
 
 ### ⚙️ Adjustments
 
