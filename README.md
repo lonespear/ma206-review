@@ -29,7 +29,7 @@ StatBall reinforces core intro stats concepts:
 
 ### ⚾ 1. Quiz Phase — Earn Your Salary Cap
 
-Students take a multiple-choice quiz (25 questions). Each correct answer earns **$400,000** in salary cap.
+Students take a multiple-choice quiz (30 questions). Each correct answer earns **$1 million** in salary cap which they will use in the next phase.
 
 > Example: 18/25 correct → $7.2M salary cap
 
@@ -127,8 +127,9 @@ streamlit run app/main.py
 
 ---
 
-## 👨‍🏫 Use Cases
+## 👨‍🏫 Notes for Teachers
 
+- The results of each team's quiz and player bids are recorded through Google Sheets/Drive APIs. Will need to adjust TOML file in own deployment through streamlit (or other app-hosting website to manage keys).
 - Student stats review before the Term End Exam  
 - Engaged, team-based learning for intro statistics  
 - Adaptable to high school AP Stats or college intro courses  
@@ -145,7 +146,7 @@ streamlit run app/main.py
 
 ## 👥 Attribution
 
-StatBall created by **CPT Jonathan Day**  
+StatBall created by **Jonathan Day**  
 Department of Mathematical Sciences  
 United States Military Academy – West Point
 
