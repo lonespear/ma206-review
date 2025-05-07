@@ -1,6 +1,10 @@
 
 # ⚾ StatBall: A Stats-Powered Baseball Review Game
 
+<p align="center">
+  <img src="assets/statball_logo.png" alt="StatBall Logo" width="300"/>
+</p>
+
 **StatBall** is a classroom-tested dice baseball game built by the West Point Department of Mathematical Sciences. It’s designed to help cadets review probability and statistics through gameplay. Cadets answer review questions to earn a salary cap, draft hitters and pitchers with real statistical traits, and compete in a dice-driven baseball tournament.
 
 ---
