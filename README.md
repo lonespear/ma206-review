@@ -47,7 +47,7 @@ Players are unique and vary in quality. OBP and SLG affect how likely a batter g
 
 Moving forward I am going to emphasize more on scouting via an exercise in probability:
 
-$$ \mathbb{E}[\text{Bases per Plate Appearance}] $$
+$$ \mathcal{E}[\text{Bases per Plate Appearance}] $$
 
 ---
 
