@@ -45,9 +45,9 @@ Players are unique and vary in quality. OBP and SLG affect how likely a batter g
 
 > Draft is done using silent auction: Students submit bids within their cap.
 
-Moving forward I am going to make this more rigorous an exercise in probability:
+Moving forward I am going to emphasize more on scouting via an exercise in probability:
 
-$$ x^2 = 5 $$
+$$ \mathbbm{E}[\text{Bases per Plate Appearance}] $$
 
 ---
 
