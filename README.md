@@ -51,6 +51,17 @@ $$
 \mathcal{E}[\text{Bases per Plate Appearance}] = P(Hit) E[ Bases | Hit ]
 $$
 
+OBP and SLG relate to the game via separate **2d6** dice rolls in tranches based on player talent. 
+
+For instance using Grant Dinger with a 390 OBP and 560 SLG would have the following expected bases per plate appearance:
+
+$$
+\mathcal{E}[\text{Bases per Plate Appearance}] = P(6+) E[ Bases | 6+ ] \\
+= \frac{26}{36} \cdot \frac{(1B(6) + 2B(15) + 3B(12) + HR(3))}{36} \\
+= \frac{26}{36} \cdot \frac{(1(6) + 2(15) + 3(12) + 4(3))}{36} \\
+= \frac{26}{36} \cdot 2.333 = 1.684 bases per plate appearance
+$$
+
 ---
 
 ### 🏆 3. Tournament Phase — Let’s Play Ball!
