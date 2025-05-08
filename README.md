@@ -65,7 +65,7 @@ $$
 = \frac{26}{36} \cdot \frac{(1(6) + 2(15) + 3(12) + 4(3))}{36}
 $$
 $$
-= \frac{26}{36} \cdot 2.333 = 1.684 bases per plate appearance
+= \frac{26}{36} \cdot 2.333 = 1.684
 $$
 
 ---
