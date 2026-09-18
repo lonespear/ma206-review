@@ -3,7 +3,6 @@ import pandas as pd
 import random
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
-import streamlit as st
 
 def send_to_gsheet(data_dict):
     scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
@@ -24,7 +23,7 @@ st.markdown("""
 
 1. **Quiz Tab**:  
    - Select your section, enter your team name, and everyone in the group's last names.  
-   - Answer all 25 multiple-choice questions.  
+   - Answer all 30 multiple-choice questions.
    - When finished, click **"Score My Answers"** to reveal your **Salary Cap** based on correct answers.
 
 2. **Draft Tab**:  
@@ -66,7 +65,7 @@ def run_quiz_form(team_name, members, section, salary_per_question=1):
             6: {"question": "In a random sample of 100 people, 64 support a new policy. If the null hypothesis is that π = 0.70, what is the standardized test statistic (z)?",
                 "options": ["-1.31", "-0.60", "0.60", "1.20"],
                 "answer": "-1.31",
-                "explanation": "Use z = (p̂ - π) / √(π(1 - π)/n) = (0.64 - 0.70) / √(0.70×0.30/100) ≈ -1.31."},
+                "explanation": "Use z = (p̂ - π₀) / √(π₀(1 - π₀)/n) = (0.64 - 0.70) / √(0.70×0.30/100) ≈ -1.31."},
             7: {"question": "Your p-value is 0.004. What conclusion is most justified?",
                 "options": ["Reject the null hypothesis", "Fail to reject the null hypothesis", "Accept the alternative hypothesis", "Your sample is biased"],
                 "answer": "Reject the null hypothesis",
@@ -107,9 +106,9 @@ def run_quiz_form(team_name, members, section, salary_per_question=1):
                 "answer": "16%",
                 "explanation": "Bayes’ Rule: (0.02*0.95)/((0.02*0.95)+(0.98*0.10)) ≈ 0.162."},
             16: {"question": "Regression slope = 0.12 for GPA vs hours studied. What does this mean?",
-                "options": ["Each extra hour increases GPA by 0.12 on average", "Intercept is 0.12", "Prediction error is 12%", "R² is 0.12"],
-                "answer": "Each extra hour increases GPA by 0.12 on average",
-                "explanation": "Slope indicates the change in response per unit predictor."},
+                "options": ["Each extra hour studied is associated with a 0.12 higher GPA on average", "Intercept is 0.12", "Prediction error is 12%", "R² is 0.12"],
+                "answer": "Each extra hour studied is associated with a 0.12 higher GPA on average",
+                "explanation": "The slope is the average difference in the response for a one-unit difference in the predictor. These data are observational, so the slope describes association, not a causal effect."},
             17: {"question": "Which study design best supports causal conclusions?",
                 "options": ["Random Assignment", "Observational study", "Cohort study", "Cross-sectional survey"],
                 "answer": "Random Assignment",
@@ -153,7 +152,7 @@ def run_quiz_form(team_name, members, section, salary_per_question=1):
             27: {"question": "You survey 200 people and 154 support a bill. Is this evidence to show support exceeds 75%? What is the z-statistic?",
                  "options": ["0.50", "1.15", "1.79", "0.65"],
                  "answer": "0.65",
-                 "explanation": "π = 0.75, p̂ = 154/200 = 0.77; z = (0.77−0.75)/√(0.75×0.25/200) ≈ 1.15."},
+                 "explanation": "π₀ = 0.75, p̂ = 154/200 = 0.77; z = (0.77 − 0.75)/√(0.75×0.25/200) = 0.02/0.0306 ≈ 0.65."},
             28: {"question": "A sample of 49 people report x̄ = 6.8 hours of sleep with s = 0.7. Test H₀: μ = 7. What is the t-statistic?",
                  "options": ["-1.00", "-2.00", "-3.00", "-1.75"],
                  "answer": "-2.00",
@@ -235,7 +234,7 @@ def run_quiz_form(team_name, members, section, salary_per_question=1):
                 st.markdown(f"❌ Q{q_num}: Incorrect — **Correct: {q_data['answer']}**")
                 st.caption(q_data["explanation"])
 
-        st.markdown(f"### 🎯 Total Salary Cap: \${cap} million")
+        st.markdown(rf"### 🎯 Total Salary Cap: \${cap} million")
         return cap
 
     return None
@@ -295,7 +294,7 @@ with tab_draft:
 
         df["Your Bid"] = bids
         st.markdown("---")
-        st.write(f"**Total Bid:** \${sum(bids):,} of \${cap:,} million")
+        st.write(rf"**Total Bid:** \${sum(bids):,} of \${cap:,} million")
         if sum(bids) > cap:
             st.error("You’ve exceeded your Salary Cap!")
         else:
@@ -317,7 +316,7 @@ with tab_draft:
                 for player, bid in zip(df["Player"], bids):
                     data_dict[f"Bid: {player}"] = bid
 
-                # Add quiz correctness columns Q1–Q25
+                # Add quiz correctness columns Q1–Q30
                 data_dict.update(st.session_state.get("quiz_results", {}))
 
                 if st.button("Submit Bids to Google Sheet"):

@@ -31,7 +31,7 @@ StatBall reinforces core intro stats concepts:
 
 Students take a multiple-choice quiz (30 questions). Each correct answer earns **$1 million** in salary cap which they will use in the next phase.
 
-> Example: 18/25 correct → $7.2M salary cap
+> Example: 18/30 correct → $18M salary cap
 
 ---
 
@@ -53,7 +53,7 @@ $$
 
 OBP and SLG relate to the game via separate **2d6** dice rolls in tranches based on player talent. 
 
-For instance using Grant Dinger with a 390 OBP and 560 SLG would have the following expected bases per plate appearance:
+For instance Grant Dinger, with a .389 OBP (hit on a modified roll of 6+) and a .560 SLG, has the following expected bases per plate appearance:
 
 $$
 \mathcal{E}[\text{Bases per Plate Appearance}] = P(6+) E[ Bases | 6+ ]
@@ -114,15 +114,17 @@ Track:
 ## 📦 Folder Structure (if using source code)
 
 ```
-statball/
-├── review.py          # Streamlit app walking students through Review Quiz, Player Bidding, and Explanation of Stats relating to Gameplay
-├── player_stats.csv   # File holding player stats
-├── requirements.txt   # Python dependecies
-├── statball_log.pdf   # Game Sheets (Sorry no downloadable Dice, although https://rolladie.net/ has a great interface!
+ma206-review/
+├── review.py                 # Streamlit app walking students through Review Quiz, Player Bidding, and Explanation of Stats relating to Gameplay
+├── player_stats.csv          # File holding player stats
+├── requirements.txt          # Python dependencies
+├── statball_gamesheet.pdf    # Game sheets (sorry, no downloadable dice — https://rolladie.net/ has a great interface!)
 ├── assets/
-│   └── statball_logo.png
-|   └── example_log.png
-└── README.md            # This file
+│   ├── statball_logo.png
+│   ├── example_log.png
+│   └── example_inning.png
+├── LICENSE
+└── README.md                 # This file
 ```
 
 ---
@@ -132,8 +134,8 @@ statball/
 ### 1. Clone the Repo
 
 ```bash
-git clone https://github.com/your-username/statball.git
-cd statball
+git clone https://github.com/lonespear/ma206-review.git
+cd ma206-review
 ```
 
 ### 2. Install Dependencies
@@ -145,7 +147,7 @@ pip install -r requirements.txt
 ### 3. Run the App
 
 ```bash
-streamlit run app/main.py
+streamlit run review.py
 ```
 
 ---
